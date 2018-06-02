@@ -231,36 +231,41 @@ namespace Visualizar
             try
             {
 
+                btnFilmesIguais.Enabled = false;
+                DateTime comecou = DateTime.Now;
+                                
                 dgvIgual.Refresh();
                 dgvIgual.DataSource = null;
                 List<Filmes> lsFilmesIguais = new List<Filmes>();
-                bool achou = false;
 
-                MessageBox.Show("Começou  filmow = " + lsFilmow.Count + "  Adoro Cinema = " + lsAdoroCinema.Count);
-
-
-                lsFilmesIguais = lsFilmow;
+                //bool achou = false;
+               // MessageBox.Show("Filmou " + lsFilmow.Count + " " + lsAdoroCinema[0].titulo + " Adoro " + lsAdoroCinema.Count + " " + lsAdoroCinema[0].titulo);
+                
                 for (int i = 0; i < lsFilmow.Count; i++)
                 {
-                    for (int j = 0; j < lsAdoroCinema.Count && achou == false; j++)
+                    for (int j = 0; j < lsAdoroCinema.Count; j++)
                     {
-                        if (lsAdoroCinema[j].titulo.ToUpper() == lsFilmow[i].titulo.ToUpper())
+                        if (lsFilmow[i].titulo.ToUpper() == lsAdoroCinema[j].titulo.ToUpper()  )
                         {
-                            lsFilmesIguais.Add(lsAdoroCinema[j]);
-                            achou = true;
+                            lsFilmesIguais.Add(lsAdoroCinema[j]);                            
+                            j = lsAdoroCinema.Count;
                         }
+
+                       
                     }
-
-
-
-                    achou = false;
-
+                    
+                    
+                    
                 }
 
+                DateTime terminou = DateTime.Now;
+                
 
-                MessageBox.Show("Acabou");
+                MessageBox.Show("Comecou " + comecou.ToString() + " Terminou " + terminou.ToString() + " Foram incontrados " + lsFilmesIguais.Count + " filmes iguais");
 
                 dgvIgual.DataSource = lsFilmesIguais;
+
+                btnFilmesIguais.Enabled = true;
 
             }
             catch (Exception erro)
@@ -270,6 +275,12 @@ namespace Visualizar
             }
 
             
+        }
+
+        private void btnGrafico_Click(object sender, EventArgs e)
+        {
+            Grafico g = new Grafico(lsFilmow, lsAdoroCinema);
+            g.Show();
         }
     }
 }

@@ -1,7 +1,7 @@
 
 package br.pro.grupo.pi.webscraping;
 
-public class Livros {
+public class Filme {
     private String li;
     private String titulo;
     private String nota;

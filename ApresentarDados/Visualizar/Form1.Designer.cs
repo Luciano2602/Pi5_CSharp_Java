@@ -50,6 +50,7 @@
             this.txtMaiorNotaFolmow = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvIgual = new System.Windows.Forms.DataGridView();
+            this.btnGrafico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgual)).BeginInit();
@@ -59,7 +60,7 @@
             // 
             this.btnBuscar.Location = new System.Drawing.Point(33, 12);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(179, 52);
+            this.btnBuscar.Size = new System.Drawing.Size(106, 52);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "BuscarTodos";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -83,9 +84,9 @@
             // 
             // btnMedia
             // 
-            this.btnMedia.Location = new System.Drawing.Point(277, 12);
+            this.btnMedia.Location = new System.Drawing.Point(158, 12);
             this.btnMedia.Name = "btnMedia";
-            this.btnMedia.Size = new System.Drawing.Size(178, 52);
+            this.btnMedia.Size = new System.Drawing.Size(106, 52);
             this.btnMedia.TabIndex = 3;
             this.btnMedia.Text = "Média das notas";
             this.btnMedia.UseVisualStyleBackColor = true;
@@ -93,9 +94,9 @@
             // 
             // btnTop10
             // 
-            this.btnTop10.Location = new System.Drawing.Point(507, 12);
+            this.btnTop10.Location = new System.Drawing.Point(293, 12);
             this.btnTop10.Name = "btnTop10";
-            this.btnTop10.Size = new System.Drawing.Size(148, 52);
+            this.btnTop10.Size = new System.Drawing.Size(106, 52);
             this.btnTop10.TabIndex = 4;
             this.btnTop10.Text = "TOP 10";
             this.btnTop10.UseVisualStyleBackColor = true;
@@ -103,9 +104,9 @@
             // 
             // btnFilmesIguais
             // 
-            this.btnFilmesIguais.Location = new System.Drawing.Point(699, 12);
+            this.btnFilmesIguais.Location = new System.Drawing.Point(422, 12);
             this.btnFilmesIguais.Name = "btnFilmesIguais";
-            this.btnFilmesIguais.Size = new System.Drawing.Size(163, 52);
+            this.btnFilmesIguais.Size = new System.Drawing.Size(106, 52);
             this.btnFilmesIguais.TabIndex = 5;
             this.btnFilmesIguais.Text = "Filmes Iguais e Notas";
             this.btnFilmesIguais.UseVisualStyleBackColor = true;
@@ -242,11 +243,22 @@
             this.dgvIgual.Size = new System.Drawing.Size(575, 154);
             this.dgvIgual.TabIndex = 22;
             // 
+            // btnGrafico
+            // 
+            this.btnGrafico.Location = new System.Drawing.Point(562, 12);
+            this.btnGrafico.Name = "btnGrafico";
+            this.btnGrafico.Size = new System.Drawing.Size(106, 52);
+            this.btnGrafico.TabIndex = 23;
+            this.btnGrafico.Text = "Gráfico";
+            this.btnGrafico.UseVisualStyleBackColor = true;
+            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 749);
+            this.Controls.Add(this.btnGrafico);
             this.Controls.Add(this.dgvIgual);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -304,6 +316,7 @@
         private System.Windows.Forms.TextBox txtMaiorNotaFolmow;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvIgual;
+        private System.Windows.Forms.Button btnGrafico;
     }
 }
 

@@ -4,27 +4,27 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-//import com.gargoylesoftware.htmlunit.BrowserVersion;
-//import com.gargoylesoftware.htmlunit.WebClient;
-//import com.gargoylesoftware.htmlunit.html.DomElement;
-//import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
-//import com.gargoylesoftware.htmlunit.html.HtmlPage;
-//import com.machinepublishers.jbrowserdriver.JBrowserDriver;
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.DomElement;
+import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.machinepublishers.jbrowserdriver.JBrowserDriver;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.util.JSON;
-//import com.sun.webkit.WebPageClient;
+import com.sun.webkit.WebPageClient;
 import java.io.IOException;
 import java.util.HashSet;
-//import java.util.List;
+import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class Program {
 
@@ -61,7 +61,7 @@ public class Program {
                     String comentario = item.select("span.badge.badge-num-comments.tip").text();
                     String subTitulo = item.select("span.legend.ws").text();
 
-                    Livros l = new Livros();
+                    Filme l = new Filme();
 
                     if (li.length() == 0) {
                         li = "Vazio";
@@ -113,12 +113,12 @@ public class Program {
         mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
 
         MongoClient mongo = new MongoClient("localhost", 27017);
-        DB db = mongo.getDB("Luciano");
-        DBCollection lv = db.getCollection("LivrosNovos");
+        DB db = mongo.getDB("PI5");
+        DBCollection lv = db.getCollection("Filmes");
 
         String site = "http://www.adorocinema.com/filmes/todos-filmes/notas-espectadores/";
 
-        for (int pg = 1371; pg <= 1567; pg++) {
+        for (int pg = 1; pg <= 1567; pg++) {
             
             if(pg == 1371)
                 Thread.sleep(400000);
@@ -133,14 +133,21 @@ public class Program {
             
             if(pg % 200 == 0)
                 Thread.sleep(40000);
+                       
             
             for (Element item : itens) {
 
                 String titulo = item.select("h2").text();
                 String nota = item.select("span.note").text();
                 //System.out.println(titulo + " <- filme " + nota + " <- Nota" );
-
-                Livros l = new Livros();
+                String lancamento = item.select("div.oflow_a").text();
+                String diretor = item.select("a.xXx").text();
+                String tipo = item.select("span.genre").text();
+                
+                System.out.println("lancamento -> " + lancamento + " diretor -> " + diretor + " diretor -> " + tipo);
+                
+                
+                Filme l = new Filme();
 
                 if (titulo.length() == 0) {
                     titulo = "Vazio";
@@ -188,7 +195,31 @@ public class Program {
         
         
         //System.out.println("Olá mundo");
-        System.out.println("SITE  ADOROCINEMA");
-        GetSiteAdorocinema();
+        //System.out.println("SITE  ADOROCINEMA");
+        //GetSiteAdorocinema();
+        
+        //pegando a pagia de funcionarios passando como parametro o cód unidade
+        JBrowserDriver driver = new JBrowserDriver();
+
+        // carrega a página principal
+        String url = "http://www.adorocinema.com/filmes/todos-filmes/notas-espectadores/?page=1";
+        driver.get(url);
+
+        // decobre os links dos mantidos
+        List<WebElement> links = driver.findElementsByCssSelector("a");
+        
+        for (WebElement link : links) {
+            System.out.println(link);
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("=========");
+            System.out.println(link.toString());
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("=========");
+            System.out.println(link.getText());
+        }
     }
 }
