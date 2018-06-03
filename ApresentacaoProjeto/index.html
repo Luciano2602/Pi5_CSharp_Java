@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PI-5 Senac</title>
+        <!-- Define a viewport-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        
+        <meta charset="utf-8">
+         <!-- acionar o cdn, ou seja ele hospeda no servidor mais proximo do cliente-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+         <link href="css/bootstrap.min.css" rel="stylesheet" media="all">
+        
+        <!-- css personalizado -->
+        
+         <link href="css/estilo.css" rel="stylesheet" media="all">
+    </head>
+    <body>
+        
+        
+        <nav class="navbar navbar-default navbar-fixed-top pading-cont-menu" role="navigation">
+            <div class="container-fluid">
+               
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-navegacao">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar empurra-cont"></span>                    
+                    </button>
+                    
+                    <div class="nav navbar-nav navbar-left menu-esp" >  
+                        <img src="Imagens/logo4.png" class="mg-top-img" style="width:50px;height:50px" alt="Logo" />  
+                        <a class="navbar-brand" href="#page-top"><p class="textoKey">PI-5 Senac </p></a>
+                    </div>                    
+                    
+                    
+                    </div>
+                
+                <!-- mexido na linha 4291- esta -15pc -->
+                
+                <div class="collapse navbar-collapse " id="menu-navegacao">
+                    
+                    <ul class="nav nav-pills nav-justified menu-direita navbar-right" >
+                        
+                        <li></li> 
+                        <li></li> 
+                        <li class="active">
+                            <a class="" href="#home">Projeto</a>
+                        </li>
+                        <li>
+                            <a class="" href="#servicos">Escopo</a>
+                        </li>
+                        <li>
+                            <a class="" href="#equipe">Grupo</a>
+                        </li>
+                        <li>
+                            <a class="" href="#quemSomos">Dificuldades</a>
+                        </li>
+                        <li>
+                            <a class="" href="#contato">Tecnologia</a>
+                        </li>                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </nav>
+        
+        <div class="container-fluid" id="home">
+            <!-- Home -->
+            <div class="row">
+                <div class="col-xs-12">
+                                                        
+                    <div id="carousel01" class="carousel slide" data-ride="carousel" data-interval="2000">
+                        
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel01" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel01" data-slide-to="1" ></li>
+                            <li data-target="#carousel01" data-slide-to="2" ></li>
+                           
+                        </ol>    
+                        
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="Imagens/wss1.jpg" alt="luciano" style="width:100%;height:500px" />
+                                <div class="carousel-caption">
+                                    <h3 class="fonte-ws">Web Sraping</h3>
+                                    <p class="fonte-ws">Projeto Integrador 5</p>                                    
+                                </div>
+                            </div>
+                             <div class="item">
+                                <img src="Imagens/wss2.jpg" alt="quem somos" style="width:100%;height:500px" />
+                            </div>
+                             <div class="item">
+                                <img src="Imagens/wss3.jpg" alt="contato" style="width:100%;height:500px" />
+                            </div>
+                        </div>
+                        
+                        <a class="left carousel-control" href="#carousel01" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        
+                        <a class="right carousel-control" href="#carousel01" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <!-- //Home -->
+            
+            <!-- Serviços -->
+			<div class="row" id="servicos">
+                <div class="col-xs-12">
+                    <h1>Escopo do Projeto</h1>
+                    <p>
+                        Desenvolver um Web Scraping, utilizando para persistência dos dados capturados, o banco de dados MongoDB, e uma interface para apresentar os dados extraídos.  <br><br>
+                    </p>    
+                    <h2 class="titulo-escopo">Mongo DB</h2>
+                    <p>    
+                        
+                        MongoDB é um software de banco de dados orientado a documentos livre, de código aberto e multiplataforma, escrito na linguagem C++. Classificado como um programa de banco de dados NoSQL, o MongoDB usa documentos semelhantes a JSON com esquemas. É desenvolvido pela MongoDB Inc. e publicado sob uma combinação da GNU Affero General Public License e Licença Apache.
+
+                        Suas características permitem com que as aplicações modelem informações de modo muito mais natural, pois os dados podem ser aninhados em hierarquias complexas e continuar a ser indexáveis e fáceis de buscar.
+
+                        O desenvolvimento de MongoDB começou em outubro de 2007 pela 10gen, atual MongoDB Inc., e sua primeira versão pública foi lançada em fevereiro de 2009.
+                    </p><br><br>
+                    
+                    <h2 class="titulo-escopo">Web Scraping</h2>
+                    <p>    
+                        
+                        A coleta de dados web, ou raspagem web, é uma forma de mineração que permite a extração de dados de sites da web convertendo-os em informação estruturada para posterior análise. O tipo mais básico de coleta é o download manual das páginas, copiando e colando o conteúdo, e isso pode ser feito por qualquer pessoa. Contudo, essa técnica geralmente é feita através de um software que simula uma navegação humana por diversos sites, extraindo informações específicas. É um campo com ativa evolução que compartilha um objetivo comum com a visão da web semântica, uma iniciativa ambiciosa que ainda requer avanços no processamento de texto, compreensão semantical, inteligência artificial e interação homem-computador. A coleta de dados web é muito semelhante à indexação web (utilizado pela maioria dos motores de busca), mas a motivação final é muito diferente. A indexação web é usada para ajudar a tornar os motores de busca mais eficientes, já a coleta de dados é tipicamente usada para diferentes razões, como comparação de preços online, monitoramentos meteorológicos, pesquisas de mercado, coleta de dados governamentais, monitoramento de dados.
+                    </p><br><br>
+                
+                </div>               
+                
+            </div>
+            
+            
+            <!-- //Serviços -->
+            
+            <!-- Eqipe -->
+            <div class="row" id="equipe">
+                <div class="col-md-12">
+                    <h1>Grupo</h1>
+                    <p>
+                        As tarefas foram dividias em quatro etapas, a primeira foi conseguir definir o assunto do projeto, devido a variedade de coisas que poderiam ser feitas. <br>
+                        <strong>1° </strong>O assunto escolhido foi FILMES; <br> 
+                        <strong>2° </strong>Desenvolvemos o Web Scraping em Java; <br> 
+                        <strong>3° </strong> A Apresentação dos dados, foram feitas em .NET C#, utilizando Windows Formes; <br>
+                        <strong>4° </strong>Montamos a apresentação, utilizando HTML 5. <br><br>
+                        
+                    </p>
+                </div>
+                
+				<div class="col-md-4 text-center">
+					<img alt="Ednalva Senhorinha" src="Imagens/ednalva2.jpg" class="img-responsive img-circle img-thumbnail" />
+					<blockquote>
+						<p>
+							Se você é capaz de sonhar também é capaz de realizar.
+						</p> <small>Ednalva <cite>Oliveira</cite></small>
+					</blockquote>
+                    <div>
+						<a href ="https://www.facebook.com/EdnalvaOliveira.Diih" title= "Face Ednalva Oliveira" target = "_blank">
+							<img src="Imagens/face.png" title="Facebook" alt="Facebook" />
+						</a>
+						<a href="https://br.linkedin.com/in/luciano-miguel-093b55106" title="Linkdin Luciano Miguel de Lima" target="_blank">		
+							<img src="Imagens/link.png" title="Linkd IN" alt="linkedin" />
+						</a>	
+					</div>
+					
+				</div>
+				<div class="col-md-4 text-center">
+					<img  alt="Felipe Patente" src="Imagens/felipe2.jpg" class="img-responsive img-circle img-thumbnail" />
+					<blockquote>
+						<p>
+							Há mais pessoas que desistem, do que pessoas que fracassam!
+						</p> <small>Felipe <cite>Patente</cite></small>
+					</blockquote>
+					<div>
+						<a href ="https://www.facebook.com/luciano.miguel.1481" title= "Face Luciano Miguel de Lima" target = "_blank">
+							<img src="Imagens/face.png" title="Facebook" alt="Facebook" />
+						</a>
+						<a href="https://br.linkedin.com/in/luciano-miguel-093b55106" title="Linkdin Luciano Miguel de Lima" target="_blank">		
+							<img src="Imagens/link.png" title="Linkd IN" alt="linkedin" />
+						</a>	
+					</div>
+				</div>
+				<div class="col-md-4 text-center">
+					<img  alt="Luciano Miguel" src="Imagens/Luciano01.jpg" class="img-responsive img-circle img-thumbnail" />
+					<blockquote>
+						<p>
+							Se você faz o que sempre fez, você obterá o que você sempre obteve.
+						</p> <small>Luciano <cite>Miguel</cite></small>
+					</blockquote>
+                    <div>
+						<a href ="https://www.facebook.com/luciano.miguel.1481" title= "Face Luciano Miguel de Lima" target = "_blank">
+							<img src="Imagens/face.png" title="Facebook" alt="Facebook" />
+						</a>
+						<a href="https://br.linkedin.com/in/luciano-miguel-093b55106" title="Linkdin Luciano Miguel de Lima" target="_blank">		
+							<img src="Imagens/link.png" title="Linkd IN" alt="linkedin" />
+						</a>	
+					</div>
+					
+				</div>
+			</div>
+            <br>
+            <br>
+            <br>
+            
+            <!-- //Eqipe -->
+            
+            
+            <!-- Quem Somos -->
+            
+            <div class="col-xs-12" id="quemSomos">
+                
+                <div class="col-xs-6 visible-lg-block quem-somos-plg">
+                     <h2>Dificuldades</h2>
+                    <p>
+                         
+                        A maior dificuldade no decorrecor do trabalho era justamente quando o <strong>site bloqueava</strong> o nosso acesso, sendo assim tínhamos que aguardar alguns minutos, para novamente fazer um novo acesso.
+                        Por exemplo, no momento do desenvolvimento executamos diversas vezes o programa para sabermos, se estávamos pegando as informações corretas, uma solução encontrada foi limitar o tempo de execução 
+                        das Thread´s do java, com isso conseguimos atenuar o problema. <br>
+                    
+                        if(pg % 200 == 0)<br>
+                            Thread.sleep(40000);<br>
+                       
+            
+                        for (Element item : itens) {<br>
+
+                        String titulo = item.select("h2").text();<br>
+                        String nota = item.select("span.note").text();<br>
+
+                       
+                    </p>
+                    
+                </div>
+                
+                <div class="col-xs-6 visible-sm-block visible-md-block quem-somos-p">
+                    <h2>Dificuldades</h2>
+                    <p>
+                        
+                        Uma das maiores dificuldades era quando o <strong>Site nos bloqueava</strong>, como no momento do desenvolvimentos, fomos  testando o nosso código, para sabermos ao certo se estávamos pegando as tags certas, ao executar várias vezes, nós tomávamos um erro, dizendo que o site estava fora do ar e tal, tínhamos que aguardar alguns minutos, uma solução encontrada foi limitar o tempo de execução da Thread no java, como isso conseguimos atenuar o problema.<br>
+                        
+                        if(pg % 200 == 0)<br>
+                            Thread.sleep(40000);<br>
+                       
+            
+                        for (Element item : itens) {<br>
+
+                        String titulo = item.select("h2").text();<br>
+                        String nota = item.select("span.note").text();<br>
+                    </p>
+                </div>
+                <div class="col-xs-11 visible-xs-block quem-somos-p-xs">
+                    <h2>Dificuldades</h2>
+                    <p >
+                        
+                        Uma das maiores dificuldades era quando o <strong>Site nos bloqueava</strong>, como no momento do desenvolvimentos, fomos  testando o nosso código, para sabermos ao certo se estávamos pegando as tags certas, ao executar várias vezes, nós tomávamos um erro, dizendo que o site estava fora do ar e tal, tínhamos que aguardar alguns minutos, uma solução encontrada foi limitar o tempo de execução da Thread no java, como isso conseguimos atenuar o problema. <br>
+                        
+                        if(pg % 200 == 0)<br>
+                            Thread.sleep(40000);<br>
+                       
+            
+                        for (Element item : itens) {<br>
+
+                        String titulo = item.select("h2").text();<br>
+                        String nota = item.select("span.note").text();<br>
+                    </p>
+                </div>
+                            
+                
+                <img  alt="Luciano Miguel" src="Imagens/fundoQuemSomos.jpg" class="img-responsive" style="width:100%;height:600px" />
+            </div>
+            
+            <!-- //Quem Somos -->
+            <!-- Contanto -->
+            <div class="col-xs-12" id="contato">
+                
+                <h2>Tecnologias Usadas</h2>
+                
+                
+              
+                
+                <img src="Imagens/tecnologias.png" class="img-responsive" alt="contato" style="width:100%;height:600px" />
+            </div>
+            <!-- //Contanto -->
+			
+        </div>
+        
+        <!-- Roda pe -->
+        <nav class="navbar navbar-default navbar-fixed-bottom " role="navigation">
+             <div class="container-fluid">
+                <div class="row">
+                        <div class="col-xs-5 largura-footer">
+                            <p class="text-rodape-p visible-xs-block visible-sm-block">
+                                EFL_PI-V.com.br
+                            </p>
+                            <p class="text-rodape-p visible-md-block visible-lg-block font-lg-p">
+                                EFL_PI-V.com.br
+                            </p>
+                            
+                            
+                        </div>
+                        <!-- offset- empurra a esquerda os blocos -->
+                        <div class="col-xs-7 col-xs-offset largura-footer">
+                            <p class="text-rodape-p text-rodape-p-dir visible-xs-block visible-sm-block">
+                                efl_pi-v@senac.com.br
+                            </p>
+                            <p class="text-rodape-p text-rodape-p-dir visible-md-block visible-lg-block font-lg-p">
+                                efl_pi-v@senac.com.br
+                            </p>
+
+                       </div>
+                </div>
+            </div>
+        </nav>    
+        <!-- //Roda pe -->
+        
+        
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        
+    </body>
+</html>

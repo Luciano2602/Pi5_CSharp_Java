@@ -230,42 +230,48 @@ namespace Visualizar
         {
             try
             {
+                DialogResult resultado = MessageBox.Show("Esse processo demora em torno de 4 minutos, seja continuar ?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                btnFilmesIguais.Enabled = false;
-                DateTime comecou = DateTime.Now;
-                                
-                dgvIgual.Refresh();
-                dgvIgual.DataSource = null;
-                List<Filmes> lsFilmesIguais = new List<Filmes>();
-
-                //bool achou = false;
-               // MessageBox.Show("Filmou " + lsFilmow.Count + " " + lsAdoroCinema[0].titulo + " Adoro " + lsAdoroCinema.Count + " " + lsAdoroCinema[0].titulo);
-                
-                for (int i = 0; i < lsFilmow.Count; i++)
+                if (resultado == DialogResult.Yes)
                 {
-                    for (int j = 0; j < lsAdoroCinema.Count; j++)
+                    btnFilmesIguais.Enabled = false;
+                    DateTime comecou = DateTime.Now;
+
+                    dgvIgual.Refresh();
+                    dgvIgual.DataSource = null;
+                    List<Filmes> lsFilmesIguais = new List<Filmes>();
+
+                    //bool achou = false;
+                    // MessageBox.Show("Filmou " + lsFilmow.Count + " " + lsAdoroCinema[0].titulo + " Adoro " + lsAdoroCinema.Count + " " + lsAdoroCinema[0].titulo);
+
+                    for (int i = 0; i < lsFilmow.Count; i++)
                     {
-                        if (lsFilmow[i].titulo.ToUpper() == lsAdoroCinema[j].titulo.ToUpper()  )
+                        for (int j = 0; j < lsAdoroCinema.Count; j++)
                         {
-                            lsFilmesIguais.Add(lsAdoroCinema[j]);                            
-                            j = lsAdoroCinema.Count;
+                            if (lsFilmow[i].titulo.ToUpper() == lsAdoroCinema[j].titulo.ToUpper())
+                            {
+                                lsFilmesIguais.Add(lsAdoroCinema[j]);
+                                j = lsAdoroCinema.Count;
+                            }
+
+
                         }
 
-                       
+
+
                     }
-                    
-                    
-                    
+
+                    DateTime terminou = DateTime.Now;
+
+
+                    MessageBox.Show("Comecou " + comecou.ToString() + " Terminou " + terminou.ToString() + " Foram incontrados " + lsFilmesIguais.Count + " filmes iguais");
+
+                    dgvIgual.DataSource = lsFilmesIguais;
+
+                    btnFilmesIguais.Enabled = true;
                 }
 
-                DateTime terminou = DateTime.Now;
                 
-
-                MessageBox.Show("Comecou " + comecou.ToString() + " Terminou " + terminou.ToString() + " Foram incontrados " + lsFilmesIguais.Count + " filmes iguais");
-
-                dgvIgual.DataSource = lsFilmesIguais;
-
-                btnFilmesIguais.Enabled = true;
 
             }
             catch (Exception erro)

@@ -131,6 +131,9 @@ namespace Visualizar
                           };
 
 
+            gpFilmow = gpFilmow.OrderByDescending(c => c.Nota);
+            gpAdoro = gpAdoro.OrderByDescending(c => c.Nota);
+
             foreach (var gpFl in gpFilmow)
             {
                 if(gpFl.Nota >= valor1 && gpFl.Nota <= valor2)
