@@ -51,6 +51,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dgvIgual = new System.Windows.Forms.DataGridView();
             this.btnGrafico = new System.Windows.Forms.Button();
+            this.txtVariancaAdoroFilme = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtVariancaNotaFilmow = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDesvioAdoro = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtDesvioFilmow = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgual)).BeginInit();
@@ -171,7 +179,7 @@
             // 
             // txtAvalidosFilmow
             // 
-            this.txtAvalidosFilmow.Location = new System.Drawing.Point(628, 423);
+            this.txtAvalidosFilmow.Location = new System.Drawing.Point(628, 399);
             this.txtAvalidosFilmow.Name = "txtAvalidosFilmow";
             this.txtAvalidosFilmow.Size = new System.Drawing.Size(100, 20);
             this.txtAvalidosFilmow.TabIndex = 13;
@@ -179,7 +187,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(625, 407);
+            this.label5.Location = new System.Drawing.Point(625, 383);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 13);
             this.label5.TabIndex = 14;
@@ -253,11 +261,83 @@
             this.btnGrafico.UseVisualStyleBackColor = true;
             this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
             // 
+            // txtVariancaAdoroFilme
+            // 
+            this.txtVariancaAdoroFilme.Location = new System.Drawing.Point(752, 191);
+            this.txtVariancaAdoroFilme.Name = "txtVariancaAdoroFilme";
+            this.txtVariancaAdoroFilme.Size = new System.Drawing.Size(100, 20);
+            this.txtVariancaAdoroFilme.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(749, 175);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Variância";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(749, 383);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Variância";
+            // 
+            // txtVariancaNotaFilmow
+            // 
+            this.txtVariancaNotaFilmow.Location = new System.Drawing.Point(752, 399);
+            this.txtVariancaNotaFilmow.Name = "txtVariancaNotaFilmow";
+            this.txtVariancaNotaFilmow.Size = new System.Drawing.Size(100, 20);
+            this.txtVariancaNotaFilmow.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(625, 231);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Desvio";
+            // 
+            // txtDesvioAdoro
+            // 
+            this.txtDesvioAdoro.Location = new System.Drawing.Point(628, 247);
+            this.txtDesvioAdoro.Name = "txtDesvioAdoro";
+            this.txtDesvioAdoro.Size = new System.Drawing.Size(100, 20);
+            this.txtDesvioAdoro.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(625, 440);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Desvio";
+            // 
+            // txtDesvioFilmow
+            // 
+            this.txtDesvioFilmow.Location = new System.Drawing.Point(628, 456);
+            this.txtDesvioFilmow.Name = "txtDesvioFilmow";
+            this.txtDesvioFilmow.Size = new System.Drawing.Size(100, 20);
+            this.txtDesvioFilmow.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 749);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtDesvioFilmow);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtDesvioAdoro);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtVariancaNotaFilmow);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtVariancaAdoroFilme);
             this.Controls.Add(this.btnGrafico);
             this.Controls.Add(this.dgvIgual);
             this.Controls.Add(this.label9);
@@ -282,7 +362,7 @@
             this.Controls.Add(this.dgvPrincipal);
             this.Controls.Add(this.btnBuscar);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "PI-5";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
@@ -317,6 +397,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvIgual;
         private System.Windows.Forms.Button btnGrafico;
+        private System.Windows.Forms.TextBox txtVariancaAdoroFilme;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtVariancaNotaFilmow;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtDesvioAdoro;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtDesvioFilmow;
     }
 }
 

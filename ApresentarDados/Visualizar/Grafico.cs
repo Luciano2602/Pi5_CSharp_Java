@@ -137,7 +137,7 @@ namespace Visualizar
             foreach (var gpFl in gpFilmow)
             {
                 if(gpFl.Nota >= valor1 && gpFl.Nota <= valor2)
-                    chAdoro.Series[0].Points.AddXY(gpFl.Nota.ToString(), gpFl.Qtd);
+                    chAdoro.Series[0].Points.AddXY(gpFl.Nota, gpFl.Qtd);
             }
 
 
@@ -145,7 +145,7 @@ namespace Visualizar
             foreach (var gpAd in gpAdoro)
             {
                 if (gpAd.Nota >= valor1 && gpAd.Nota <= valor2)
-                    chFilow.Series[0].Points.AddXY(gpAd.Nota.ToString(), gpAd.Qtd);
+                    chFilow.Series[0].Points.AddXY(gpAd.Nota, gpAd.Qtd);
             }
 
         }

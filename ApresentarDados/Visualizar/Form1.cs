@@ -93,17 +93,45 @@ namespace Visualizar
                     }
                 }
 
+                                
                 mediaFolmow /= i;
                 mediaAdoroCinema /= j;
 
                 mediaAdoroCinAvaliado /= m;
                 mediaFolmowAvaliado /= k;
 
+
+                double soma2 = 0;
+                foreach (var fl in lsFilmow)
+                {
+                    soma2 += Math.Pow(((double) fl.nota - mediaFolmowAvaliado),2);
+                }
+
+                double mediaVariancaFilmow = soma2 / lsFilmow.Count;
+
+
+
+                double soma3 = 0;
+                foreach (var fl in lsAdoroCinema)
+                {
+                    soma3 += Math.Pow(((double)fl.nota - mediaAdoroCinAvaliado), 2);
+                }
+                double mediaVariancaAdoroFilme= soma3 / lsAdoroCinema.Count;
+
+
                 txtAdoroCinema.Text = mediaAdoroCinema.ToString().Substring(0,4);
                 txtFilmon.Text = mediaFolmow.ToString().Substring(0, 4);
 
                 txtAvaliadosAdoroCinema.Text = mediaAdoroCinAvaliado.ToString().Substring(0, 4);
                 txtAvalidosFilmow.Text = mediaFolmowAvaliado.ToString().Substring(0, 4);
+
+                txtVariancaNotaFilmow.Text = mediaVariancaFilmow.ToString().Substring(0, 4);
+                txtVariancaAdoroFilme.Text = mediaVariancaAdoroFilme.ToString().Substring(0, 4);
+
+                txtDesvioAdoro.Text = Math.Sqrt(mediaVariancaAdoroFilme).ToString().Substring(0, 4);
+                txtDesvioFilmow.Text = Math.Sqrt(mediaVariancaFilmow).ToString().Substring(0, 4);
+
+
 
             }
             catch (Exception erro)
@@ -175,11 +203,16 @@ namespace Visualizar
                 double maiorNotaAdoro = 0;
                 double maiorNotaFilmow = 0;
 
+                double menorNotaAdoro = 0;
+                double menorNotaFilmow = 0;
+
 
                 foreach (var item in lsAdoroCinema)
                 {
                     if (item.nota > maiorNotaAdoro)
                         maiorNotaAdoro = item.nota;
+
+                    //if( item.nota)
                 }
 
                 foreach (var item in lsFilmow)
