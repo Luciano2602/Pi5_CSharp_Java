@@ -13,19 +13,24 @@ namespace Visualizar
 {
     public partial class Form1 : Form
     {
+        //variaveis com o as listas dos filmes
         public List<Filmes> lsFilmow;
         public List<Filmes> lsAdoroCinema;
+        int i = 0;
         public Form1()
         {
             InitializeComponent();
+            i = 0;
         }
 
         
         public void AtualizarGrid()
         {
+            //adicinando o null, pq se tiver alguma coisa no grid, ele é limpado
             dgv2.DataSource = null;
             dgvPrincipal.DataSource = null;
 
+            //atualizando o gride
             dgvPrincipal.Refresh();
             dgv2.Refresh();
         }
@@ -33,8 +38,10 @@ namespace Visualizar
         {
             try
             {
-
+                // no load da página está carregado as listas
+                //limpando o grid
                 AtualizarGrid();
+                //adicionando ao grid nossa lista
                 dgv2.DataSource = lsFilmow;
                 dgvPrincipal.DataSource = lsAdoroCinema;
 
@@ -55,13 +62,14 @@ namespace Visualizar
         {
             try
             {
-                
+                //variaveis usadas para cálculo da média
                 double mediaFolmow = 0;
                 double mediaAdoroCinema = 0;
 
                 double mediaFolmowAvaliado = 0;
                 double mediaAdoroCinAvaliado = 0;
 
+                //essas variaveis serão usadas para "contar a qtd de livros", sendo assim dividindo 
                 int i = 0;
                 int j = 0;
                 int k = 0;
@@ -69,9 +77,11 @@ namespace Visualizar
 
                 foreach (var item in lsFilmow)
                 {
+                    //pegando a média de todas as notas
                     i++;
                     mediaFolmow += item.nota;
 
+                    //pegando a média das notas maiores que zero
                     if(item.nota > 0)
                     {
                         mediaFolmowAvaliado += item.nota;
@@ -81,6 +91,7 @@ namespace Visualizar
 
                 }
 
+                //idem o de cima
                 foreach (var item in lsAdoroCinema)
                 {
                     j++;
@@ -93,20 +104,22 @@ namespace Visualizar
                     }
                 }
 
-                                
+                //atribuindo a média                
                 mediaFolmow /= i;
                 mediaAdoroCinema /= j;
 
+                //atribuindo a média dos avaliados
                 mediaAdoroCinAvaliado /= m;
                 mediaFolmowAvaliado /= k;
 
-
+                //pegando a varianca
                 double soma2 = 0;
                 foreach (var fl in lsFilmow)
                 {
                     soma2 += Math.Pow(((double) fl.nota - mediaFolmowAvaliado),2);
                 }
 
+                //desvio
                 double mediaVariancaFilmow = soma2 / lsFilmow.Count;
 
 
@@ -143,11 +156,12 @@ namespace Visualizar
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //carregando os livros
             LivrosNovos livroNovo = new LivrosNovos();
 
             var ln = livroNovo.GetFilmes();
 
-
+            //criando um id artificial, só para visualização no grig
             int idSite1 = 0;
             int idSite2 = 0;
 
@@ -157,6 +171,7 @@ namespace Visualizar
 
             foreach (var item in ln)
             {
+                //pegando os filmes com so site filmow
                 Filmes f = new Filmes();
                 if (item.site == "filmow.com")
                 {
@@ -175,6 +190,7 @@ namespace Visualizar
                 }
                 else
                 {
+                    //pengando os filmes do site adoroCinema
                     idSite2++;
 
                     if (item.nota.ToUpper() == "VAZIO")
@@ -195,6 +211,7 @@ namespace Visualizar
 
             try
             {
+                //limpando o grid
                 AtualizarGrid();
 
                 List<Filmes> lsAdoroCinemaTop10 = new List<Filmes>();
@@ -203,16 +220,12 @@ namespace Visualizar
                 double maiorNotaAdoro = 0;
                 double maiorNotaFilmow = 0;
 
-                double menorNotaAdoro = 0;
-                double menorNotaFilmow = 0;
-
-
+                //pegando a maior nota
                 foreach (var item in lsAdoroCinema)
                 {
                     if (item.nota > maiorNotaAdoro)
                         maiorNotaAdoro = item.nota;
-
-                    //if( item.nota)
+                                        
                 }
 
                 foreach (var item in lsFilmow)
@@ -222,14 +235,14 @@ namespace Visualizar
                 }
 
 
-                
+                //ordenando a lista para exibir os 10 filmes 
                 lsAdoroCinemaTop10 = lsAdoroCinema.OrderByDescending(ac => ac.nota).ToList();
                 lsFilmowTop10 = lsFilmow.OrderByDescending(ac => ac.nota).ToList();
 
                 var lsSite1 = new List<Filmes>();
                 var lsSite2 = new List<Filmes>();
 
-                
+                //adicionando os 10 filmes na lista
                 for (int i = 0; i < 10; i++)
                 {
                     lsSite1.Add(lsAdoroCinemaTop10[i]);
@@ -244,7 +257,7 @@ namespace Visualizar
 
                 txtMaiorNotaAdoroCinema.Text = maiorNotaAdoro.ToString();
                 txtMaiorNotaFolmow.Text = maiorNotaFilmow.ToString();
-
+                //adicionando os elementos ao grid
                 dgvPrincipal.DataSource = lsSite1;
                 dgv2.DataSource = lsSite2;
 
@@ -263,27 +276,43 @@ namespace Visualizar
         {
             try
             {
+                //abrindo um mensagem dialogo do windwos, para confirmar o processamento
                 DialogResult resultado = MessageBox.Show("Esse processo demora em torno de 4 minutos, seja continuar ?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                //se resposnder sim, vai entrar no if
                 if (resultado == DialogResult.Yes)
                 {
+                    //desabilitando o botão 
                     btnFilmesIguais.Enabled = false;
+                    //pegando a hora em que iniciou
                     DateTime comecou = DateTime.Now;
 
+                    //id artificial
+                    int idFI = 0;
+                    //limpando o grid
                     dgvIgual.Refresh();
                     dgvIgual.DataSource = null;
-                    List<Filmes> lsFilmesIguais = new List<Filmes>();
+                    //criando a lista com o elemento que vai ser o grid
+                    List<FilmesIguais> lsFilmesIguais = new List<FilmesIguais>();
 
-                    //bool achou = false;
-                    // MessageBox.Show("Filmou " + lsFilmow.Count + " " + lsAdoroCinema[0].titulo + " Adoro " + lsAdoroCinema.Count + " " + lsAdoroCinema[0].titulo);
+                    
 
-                    for (int i = 0; i < lsFilmow.Count; i++)
+                    //estou pegando um elemento da lista que esta em i, e percorrendo todo o vetor do j procurando esse elemento
+                    for (i = 0; i < lsFilmow.Count; i++)
                     {
                         for (int j = 0; j < lsAdoroCinema.Count; j++)
                         {
                             if (lsFilmow[i].titulo.ToUpper() == lsAdoroCinema[j].titulo.ToUpper())
                             {
-                                lsFilmesIguais.Add(lsAdoroCinema[j]);
+                                                               
+                                idFI++;
+                                FilmesIguais fi = new FilmesIguais();
+                                fi.id = idFI;
+                                fi.notaAdoro = lsAdoroCinema[j].nota;
+                                fi.notaFilmow = lsFilmow[i].nota;
+                                fi.titulo = lsFilmow[i].titulo;
+                                fi.comentario = lsFilmow[i].comentario;
+                                //caso seja igual adiciona em uma lista
+                                lsFilmesIguais.Add(fi);
                                 j = lsAdoroCinema.Count;
                             }
 
@@ -293,14 +322,16 @@ namespace Visualizar
 
 
                     }
-
+                    //pegando a hora em que terminou o processo
                     DateTime terminou = DateTime.Now;
 
-
+                    //mostrando o horario que t=começou e terminiou ao usuario
                     MessageBox.Show("Comecou " + comecou.ToString() + " Terminou " + terminou.ToString() + " Foram incontrados " + lsFilmesIguais.Count + " filmes iguais");
 
+                    //adicionando ao grid a lista com os filmes iguais
                     dgvIgual.DataSource = lsFilmesIguais;
 
+                    //habilitando o botão 
                     btnFilmesIguais.Enabled = true;
                 }
 
@@ -309,7 +340,7 @@ namespace Visualizar
             }
             catch (Exception erro)
             {
-
+                var x = i;
                 MessageBox.Show("Erro: " + erro.Message);
             }
 
@@ -318,6 +349,7 @@ namespace Visualizar
 
         private void btnGrafico_Click(object sender, EventArgs e)
         {
+            //criando o formulário, e passando para o gráfico as listas já preenchidas 
             Grafico g = new Grafico(lsFilmow, lsAdoroCinema);
             g.Show();
         }

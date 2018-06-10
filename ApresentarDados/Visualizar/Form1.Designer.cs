@@ -77,7 +77,7 @@
             // dgvPrincipal
             // 
             this.dgvPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrincipal.Location = new System.Drawing.Point(33, 112);
+            this.dgvPrincipal.Location = new System.Drawing.Point(33, 88);
             this.dgvPrincipal.Name = "dgvPrincipal";
             this.dgvPrincipal.Size = new System.Drawing.Size(575, 155);
             this.dgvPrincipal.TabIndex = 1;
@@ -85,7 +85,7 @@
             // dgv2
             // 
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2.Location = new System.Drawing.Point(33, 321);
+            this.dgv2.Location = new System.Drawing.Point(33, 270);
             this.dgv2.Name = "dgv2";
             this.dgv2.Size = new System.Drawing.Size(575, 155);
             this.dgv2.TabIndex = 2;
@@ -123,7 +123,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 96);
+            this.label1.Location = new System.Drawing.Point(30, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 6;
@@ -132,7 +132,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 305);
+            this.label2.Location = new System.Drawing.Point(30, 254);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 7;
@@ -140,14 +140,14 @@
             // 
             // txtAdoroCinema
             // 
-            this.txtAdoroCinema.Location = new System.Drawing.Point(628, 129);
+            this.txtAdoroCinema.Location = new System.Drawing.Point(628, 105);
             this.txtAdoroCinema.Name = "txtAdoroCinema";
             this.txtAdoroCinema.Size = new System.Drawing.Size(100, 20);
             this.txtAdoroCinema.TabIndex = 8;
             // 
             // txtFilmon
             // 
-            this.txtFilmon.Location = new System.Drawing.Point(628, 337);
+            this.txtFilmon.Location = new System.Drawing.Point(628, 286);
             this.txtFilmon.Name = "txtFilmon";
             this.txtFilmon.Size = new System.Drawing.Size(100, 20);
             this.txtFilmon.TabIndex = 9;
@@ -155,7 +155,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(625, 112);
+            this.label3.Location = new System.Drawing.Point(625, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 10;
@@ -164,7 +164,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(625, 321);
+            this.label4.Location = new System.Drawing.Point(625, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 11;
@@ -172,14 +172,14 @@
             // 
             // txtAvaliadosAdoroCinema
             // 
-            this.txtAvaliadosAdoroCinema.Location = new System.Drawing.Point(628, 191);
+            this.txtAvaliadosAdoroCinema.Location = new System.Drawing.Point(628, 167);
             this.txtAvaliadosAdoroCinema.Name = "txtAvaliadosAdoroCinema";
             this.txtAvaliadosAdoroCinema.Size = new System.Drawing.Size(100, 20);
             this.txtAvaliadosAdoroCinema.TabIndex = 12;
             // 
             // txtAvalidosFilmow
             // 
-            this.txtAvalidosFilmow.Location = new System.Drawing.Point(628, 399);
+            this.txtAvalidosFilmow.Location = new System.Drawing.Point(628, 348);
             this.txtAvalidosFilmow.Name = "txtAvalidosFilmow";
             this.txtAvalidosFilmow.Size = new System.Drawing.Size(100, 20);
             this.txtAvalidosFilmow.TabIndex = 13;
@@ -187,7 +187,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(625, 383);
+            this.label5.Location = new System.Drawing.Point(625, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 13);
             this.label5.TabIndex = 14;
@@ -196,7 +196,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(625, 175);
+            this.label6.Location = new System.Drawing.Point(625, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 15;
@@ -204,7 +204,7 @@
             // 
             // txtMaiorNotaAdoroCinema
             // 
-            this.txtMaiorNotaAdoroCinema.Location = new System.Drawing.Point(752, 129);
+            this.txtMaiorNotaAdoroCinema.Location = new System.Drawing.Point(752, 105);
             this.txtMaiorNotaAdoroCinema.Name = "txtMaiorNotaAdoroCinema";
             this.txtMaiorNotaAdoroCinema.Size = new System.Drawing.Size(100, 20);
             this.txtMaiorNotaAdoroCinema.TabIndex = 16;
@@ -212,7 +212,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(749, 112);
+            this.label7.Location = new System.Drawing.Point(749, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 17;
@@ -221,7 +221,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(749, 320);
+            this.label8.Location = new System.Drawing.Point(749, 269);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 19;
@@ -229,7 +229,7 @@
             // 
             // txtMaiorNotaFolmow
             // 
-            this.txtMaiorNotaFolmow.Location = new System.Drawing.Point(752, 337);
+            this.txtMaiorNotaFolmow.Location = new System.Drawing.Point(752, 286);
             this.txtMaiorNotaFolmow.Name = "txtMaiorNotaFolmow";
             this.txtMaiorNotaFolmow.Size = new System.Drawing.Size(100, 20);
             this.txtMaiorNotaFolmow.TabIndex = 18;
@@ -237,7 +237,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 544);
+            this.label9.Location = new System.Drawing.Point(30, 439);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 13);
             this.label9.TabIndex = 21;
@@ -246,7 +246,7 @@
             // dgvIgual
             // 
             this.dgvIgual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIgual.Location = new System.Drawing.Point(33, 560);
+            this.dgvIgual.Location = new System.Drawing.Point(33, 455);
             this.dgvIgual.Name = "dgvIgual";
             this.dgvIgual.Size = new System.Drawing.Size(575, 154);
             this.dgvIgual.TabIndex = 22;
@@ -263,7 +263,7 @@
             // 
             // txtVariancaAdoroFilme
             // 
-            this.txtVariancaAdoroFilme.Location = new System.Drawing.Point(752, 191);
+            this.txtVariancaAdoroFilme.Location = new System.Drawing.Point(752, 167);
             this.txtVariancaAdoroFilme.Name = "txtVariancaAdoroFilme";
             this.txtVariancaAdoroFilme.Size = new System.Drawing.Size(100, 20);
             this.txtVariancaAdoroFilme.TabIndex = 24;
@@ -271,7 +271,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(749, 175);
+            this.label10.Location = new System.Drawing.Point(749, 151);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 13);
             this.label10.TabIndex = 25;
@@ -280,7 +280,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(749, 383);
+            this.label11.Location = new System.Drawing.Point(749, 332);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 13);
             this.label11.TabIndex = 27;
@@ -288,7 +288,7 @@
             // 
             // txtVariancaNotaFilmow
             // 
-            this.txtVariancaNotaFilmow.Location = new System.Drawing.Point(752, 399);
+            this.txtVariancaNotaFilmow.Location = new System.Drawing.Point(752, 348);
             this.txtVariancaNotaFilmow.Name = "txtVariancaNotaFilmow";
             this.txtVariancaNotaFilmow.Size = new System.Drawing.Size(100, 20);
             this.txtVariancaNotaFilmow.TabIndex = 26;
@@ -296,7 +296,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(625, 231);
+            this.label12.Location = new System.Drawing.Point(625, 207);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 29;
@@ -304,7 +304,7 @@
             // 
             // txtDesvioAdoro
             // 
-            this.txtDesvioAdoro.Location = new System.Drawing.Point(628, 247);
+            this.txtDesvioAdoro.Location = new System.Drawing.Point(628, 223);
             this.txtDesvioAdoro.Name = "txtDesvioAdoro";
             this.txtDesvioAdoro.Size = new System.Drawing.Size(100, 20);
             this.txtDesvioAdoro.TabIndex = 28;
@@ -312,7 +312,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(625, 440);
+            this.label13.Location = new System.Drawing.Point(625, 389);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 13);
             this.label13.TabIndex = 31;
@@ -320,7 +320,7 @@
             // 
             // txtDesvioFilmow
             // 
-            this.txtDesvioFilmow.Location = new System.Drawing.Point(628, 456);
+            this.txtDesvioFilmow.Location = new System.Drawing.Point(628, 405);
             this.txtDesvioFilmow.Name = "txtDesvioFilmow";
             this.txtDesvioFilmow.Size = new System.Drawing.Size(100, 20);
             this.txtDesvioFilmow.TabIndex = 30;

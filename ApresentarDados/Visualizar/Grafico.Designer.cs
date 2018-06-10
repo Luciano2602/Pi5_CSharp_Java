@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chAdoro = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chFilow = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,38 +43,42 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbValoresNotas = new System.Windows.Forms.ComboBox();
+            this.txtValor1 = new System.Windows.Forms.TextBox();
+            this.txtValor2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chAdoro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chFilow)).BeginInit();
             this.SuspendLayout();
             // 
             // chAdoro
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chAdoro.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chAdoro.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.chAdoro.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chAdoro.Legends.Add(legend9);
             this.chAdoro.Location = new System.Drawing.Point(618, 71);
             this.chAdoro.Name = "chAdoro";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chAdoro.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chAdoro.Series.Add(series9);
             this.chAdoro.Size = new System.Drawing.Size(600, 300);
             this.chAdoro.TabIndex = 0;
             this.chAdoro.Text = "chart1";
             // 
             // chFilow
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chFilow.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chFilow.Legends.Add(legend2);
+            chartArea10.Name = "ChartArea1";
+            this.chFilow.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chFilow.Legends.Add(legend10);
             this.chFilow.Location = new System.Drawing.Point(12, 71);
             this.chFilow.Name = "chFilow";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chFilow.Series.Add(series2);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chFilow.Series.Add(series10);
             this.chFilow.Size = new System.Drawing.Size(600, 300);
             this.chFilow.TabIndex = 1;
             this.chFilow.Text = "chart2";
@@ -102,7 +106,7 @@
             // 
             // btnGerarGrid
             // 
-            this.btnGerarGrid.Location = new System.Drawing.Point(567, 12);
+            this.btnGerarGrid.Location = new System.Drawing.Point(777, 7);
             this.btnGerarGrid.Name = "btnGerarGrid";
             this.btnGerarGrid.Size = new System.Drawing.Size(75, 23);
             this.btnGerarGrid.TabIndex = 4;
@@ -152,11 +156,49 @@
             this.cmbValoresNotas.Size = new System.Drawing.Size(142, 21);
             this.cmbValoresNotas.TabIndex = 8;
             // 
+            // txtValor1
+            // 
+            this.txtValor1.Location = new System.Drawing.Point(532, 6);
+            this.txtValor1.Name = "txtValor1";
+            this.txtValor1.Size = new System.Drawing.Size(53, 20);
+            this.txtValor1.TabIndex = 9;
+            this.txtValor1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor1_KeyPress);
+            // 
+            // txtValor2
+            // 
+            this.txtValor2.Location = new System.Drawing.Point(532, 32);
+            this.txtValor2.Name = "txtValor2";
+            this.txtValor2.Size = new System.Drawing.Size(53, 20);
+            this.txtValor2.TabIndex = 10;
+            this.txtValor2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor2_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(462, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Ou escolha ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(462, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "o intervalo";
+            // 
             // Grafico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 480);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtValor2);
+            this.Controls.Add(this.txtValor1);
             this.Controls.Add(this.cmbValoresNotas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -187,5 +229,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbValoresNotas;
+        private System.Windows.Forms.TextBox txtValor1;
+        private System.Windows.Forms.TextBox txtValor2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

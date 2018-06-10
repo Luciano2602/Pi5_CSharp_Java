@@ -14,12 +14,15 @@ namespace Visualizar
 {
     public partial class Grafico : Form
     {
+        //essas listas serão carregadas quando o a tela for chamada
         public List<Filmes> lsFilmow;
         public List<Filmes> lsAdoroCinema;
         
         public Grafico(List<Filmes> fl, List<Filmes> ad)
         {
+
             InitializeComponent();
+            //carregando a lista que vieram da tela principal
             lsFilmow = new List<Filmes>();
             lsAdoroCinema = new List<Filmes>();
 
@@ -31,7 +34,7 @@ namespace Visualizar
 
         private void btnGerarGrid_Click(object sender, EventArgs e)
         {
-            
+            //caso passando para chart o tipo de gráfico que será gerado
             string nomeGrafico = cmbGrafico.Text;
 
             switch (nomeGrafico)
@@ -56,8 +59,11 @@ namespace Visualizar
                     break;
             }
 
-
+            //funcao para carregar o chart, no caso dessa funcao o default é de 0 a 5
             MostrarGrafico(cmbValoresNotas.Text);
+
+            if(txtValor2.Text != "" && txtValor1.Text !="") 
+                MostrarGraficoComTxt(Double.Parse(txtValor1.Text), Double.Parse(txtValor2.Text));
 
 
         }
@@ -67,9 +73,59 @@ namespace Visualizar
             
         }
 
+        public void MostrarGraficoComTxt(Double num1, Double num2)
+        {
+            LimparChart();
+            //agrupando os valores , estamos juntando as notas e contando 
+            var gpFilmow = from item in lsFilmow
+                           group item by item.nota into agru
+                           select new
+                           {
+                               Nota = agru.Key,
+                               Qtd = agru.Count()
+                           };
+
+
+            var gpAdoro = from item in lsAdoroCinema
+                          group item by item.nota into agru
+                          select new
+                          {
+                              Nota = agru.Key,
+                              Qtd = agru.Count()
+                          };
+
+            //ordenando as notas, para poder mostrar no gráfico
+            gpFilmow = gpFilmow.OrderByDescending(c => c.Nota);
+            gpAdoro = gpAdoro.OrderByDescending(c => c.Nota);
+
+            //percorrendo a lista gerada, e adicionando no x e y do gráfico somente os valores passados pelo combobox
+            foreach (var gpFl in gpFilmow)
+            {
+                if (gpFl.Nota >= num1 && gpFl.Nota <= num2)
+                    chAdoro.Series[0].Points.AddXY(gpFl.Nota, gpFl.Qtd);
+            }
+
+
+            foreach (var gpAd in gpAdoro)
+            {
+                if (gpAd.Nota >= num1 && gpAd.Nota <= num2)
+                    chFilow.Series[0].Points.AddXY(gpAd.Nota, gpAd.Qtd);
+            }
+
+        }
+
+        public void LimparChart()
+        {
+            //limpando o chart
+            chAdoro.Series[0].Points.Clear();
+            chFilow.Series[0].Points.Clear();
+        }
+
         public void MostrarGrafico(string qualValor)
         {
-           
+            LimparChart();
+
+            //para variaveis criadas para poder fazer o intervalo
             double valor1 = 0, valor2 = 0;
             #region switch
             switch (qualValor)
@@ -110,44 +166,30 @@ namespace Visualizar
             }
             #endregion
 
-            chAdoro.Series[0].Points.Clear();
+            MostrarGraficoComTxt(valor1, valor2);
 
+        }
 
-            var gpFilmow = from item in lsFilmow
-                           group item by item.nota into agru                                                     
-                           select new
-                           {
-                               Nota = agru.Key,
-                               Qtd = agru.Count()
-                           };
-
-
-            var gpAdoro = from item in lsAdoroCinema
-                          group item by item.nota into agru
-                          select new
-                          {
-                              Nota = agru.Key,
-                              Qtd = agru.Count()
-                          };
-
-
-            gpFilmow = gpFilmow.OrderByDescending(c => c.Nota);
-            gpAdoro = gpAdoro.OrderByDescending(c => c.Nota);
-
-            foreach (var gpFl in gpFilmow)
+        private void txtValor1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse campo so aceita numero e virgula
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
-                if(gpFl.Nota >= valor1 && gpFl.Nota <= valor2)
-                    chAdoro.Series[0].Points.AddXY(gpFl.Nota, gpFl.Qtd);
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente numero e virgula");
             }
+            
+        }
 
-
-            chFilow.Series[0].Points.Clear();
-            foreach (var gpAd in gpAdoro)
+        private void txtValor2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //esse campo so aceita numero e virgula
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
-                if (gpAd.Nota >= valor1 && gpAd.Nota <= valor2)
-                    chFilow.Series[0].Points.AddXY(gpAd.Nota, gpAd.Qtd);
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente numero e virgula");
             }
-
+            
         }
     }
 }
